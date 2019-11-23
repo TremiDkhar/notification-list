@@ -4,7 +4,7 @@
  *
  * @package     NotifyList
  * @author      Tremi Dkhar
- * @copyright   Copyright (c) Tremi Dkhar, 2019
+ * @copyright   Copyright (c) 2019, Tremi Dkhar
  * @license     GPL-2.0+
  *
  * Plugin Name: Notification List
@@ -31,7 +31,7 @@ final class Notification_List {
 	 *
 	 * @var object Notification_List
 	 */
-	private $instance;
+	public static $instance;
 
 	/**
 	 * Main Notification_List instance
@@ -48,6 +48,7 @@ final class Notification_List {
 
 			self::$instance = new Notification_list();
 			self::$instance->constants();
+			seff::$instance->includes();
 
 		}
 
@@ -82,6 +83,16 @@ final class Notification_List {
 		if ( ! defined( 'NOTIFICATION_LIST_PLUGIN_FILE' ) ) {
 			define( 'NOTIFICATION_LIST_PLUGIN_FILE', __FILE__ );
 		}
+	}
+
+	/**
+	 * Includes all the files required by the plugin.
+	 *
+	 * @since 0.1.0
+	 * @return void
+	 */
+	public function includes() {
+		
 	}
 }
 
