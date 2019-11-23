@@ -24,10 +24,24 @@
  * @since 0.1.0
  * @return object Notification_list
  */
-class Notification_List {
+final class Notification_List {
 
+	/**
+	 * Holds instanfce of Notification_List
+	 *
+	 * @var object Notification_List
+	 */
 	private $instance;
 
+	/**
+	 * Main Notification_List instance
+	 *
+	 * Insure that only one instance of Notification_List exists in memory at any one time.
+	 * Also prevent needing to define globals all over the place.
+	 *
+	 * @since 0.1.0
+	 * @return object Notification_List
+	 */
 	public static function instance() {
 
 		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Notification_List ) ) {
