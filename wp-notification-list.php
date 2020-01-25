@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 /**
  * Notification List
  *
@@ -22,29 +22,29 @@
  * Main Notification List Instance
  *
  * @since 0.1.0
- * @return object Notification_list
+ * @return object WPNotificationList
  */
 final class WPNotificationList {
 
 	/**
-	 * Holds instanfce of Notification_List
+	 * Holds instance of WPNotificationList
 	 *
-	 * @var object Notification_List
+	 * @var object WPNotificationList
 	 */
 	public static $instance;
 
 	/**
-	 * Main Notification_List instance
+	 * Main WPNotificationList instance
 	 *
-	 * Insure that only one instance of Notification_List exists in memory at any one time.
+	 * Insure that only one instance of WPNotificationList exists in memory at any one time.
 	 * Also prevent needing to define globals all over the place.
 	 *
 	 * @since 0.1.0
-	 * @return object Notification_List
+	 * @return object WPNotificationList
 	 */
 	public static function instance() {
 
-		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Notification_List ) ) {
+		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof self ) ) {
 
 			self::$instance = new self();
 			self::$instance->constants();
@@ -91,7 +91,7 @@ final class WPNotificationList {
  * @since 0.1.0
  * @return object
  */
-function WPNotificationList() {
+function WPNotificationList() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
 	return WPNotificationList::instance();
 }
 
