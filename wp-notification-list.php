@@ -2,20 +2,20 @@
 /**
  * Notification List
  *
- * @package     NotifyList
+ * @package     WPNotificationList
  * @author      Tremi Dkhar
- * @copyright   Copyright (c) Tremi Dkhar, 2019
+ * @copyright   Copyright (c) Tremi Dkhar, 2020
  * @license     GPL-2.0+
  *
- * Plugin Name: Notification List
+ * Plugin Name: WP Notification List
  * Plugin URI:  https://github.com/TremiDkhar/notification-list
- * Description: Display list of notification or information to the public
+ * Description: Display list of notification or information to the public.
  * Version:     0.1.0
  * Author:      Tremi Dkhar
- * Author URI:  https://twitter.com/TremiDkhar
+ * Author URI:  https://github.com/TremiDkhar
  * License:     GPL-2.0+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: notifylist
+ * Text Domain: wpnotificationlist
  */
 
 /**
@@ -24,14 +24,14 @@
  * @since 0.1.0
  * @return object Notification_list
  */
-final class Notification_List {
+final class WPNotificationList {
 
 	/**
 	 * Holds instanfce of Notification_List
 	 *
 	 * @var object Notification_List
 	 */
-	private $instance;
+	public static $instance;
 
 	/**
 	 * Main Notification_List instance
@@ -46,7 +46,7 @@ final class Notification_List {
 
 		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Notification_List ) ) {
 
-			self::$instance = new Notification_list();
+			self::$instance = new self();
 			self::$instance->constants();
 
 		}
@@ -64,23 +64,23 @@ final class Notification_List {
 	public function constants() {
 
 		// Plugin Version.
-		if ( ! defined( 'NOTIFICATION_LIST_VERSION' ) ) {
-			define( 'NOTIFICATION_LIST_VERSION', '0.1.0' );
+		if ( ! defined( 'WPNOTIFICATIONLIST_VERSION' ) ) {
+			define( 'WPNOTIFICATIONLIST_VERSION', '0.1.0' );
 		}
 
 		// Plugin URI.
-		if ( ! defined( 'NOTIFICATION_LIST_URI' ) ) {
-			define( 'NOTIFICATION_LIST_URI', plugin_dir_url( __FILE__ ) );
+		if ( ! defined( 'WPNOTIFICATIONLIST_URI' ) ) {
+			define( 'WPNOTIFICATIONLIST_URI', plugin_dir_url( __FILE__ ) );
 		}
 
 		// Plugin Path.
-		if ( ! defined( 'NOTIFICATION_LIST_PATH' ) ) {
-			define( 'NOTIFICATION_LIST_PATH', plugin_dir_path( __FILE__ ) );
+		if ( ! defined( 'WPNOTIFICATIONLIST_PATH' ) ) {
+			define( 'WPNOTIFICATIONLIST_PATH', plugin_dir_path( __FILE__ ) );
 		}
 
 		// Plugin Apps FIle.
-		if ( ! defined( 'NOTIFICATION_LIST_PLUGIN_FILE' ) ) {
-			define( 'NOTIFICATION_LIST_PLUGIN_FILE', __FILE__ );
+		if ( ! defined( 'WPNOTIFICATIONLIST_PLUGIN_FILE' ) ) {
+			define( 'WPNOTIFICATIONLIST_PLUGIN_FILE', __FILE__ );
 		}
 	}
 }
@@ -91,9 +91,9 @@ final class Notification_List {
  * @since 0.1.0
  * @return object
  */
-function notification_list() {
-	return Notification_list::instance();
+function WPNotificationList() {
+	return WPNotificationList::instance();
 }
 
 // Get the notification list running.
-notification_list();
+WPNotificationList();
