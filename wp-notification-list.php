@@ -57,6 +57,8 @@ final class WPNotificationList {
 
 			self::$instance->cpt = new WPNotificationList_Register_CPT();
 
+			add_action( 'widgets_init', array( self::$instance, 'register_widget' ) );
+
 		}
 
 		return self::$instance;
@@ -101,6 +103,18 @@ final class WPNotificationList {
 	 */
 	private function includes() {
 		require_once WPNOTIFICATIONLIST_PATH . 'includes/class-wpnotificationlist-register-cpt.php';
+		require_once WPNOTIFICATIONLIST_PATH . 'includes/class-wpnotificationlist-widget-display.php';
+	}
+
+	/**
+	 * Register the widget
+	 *
+	 * @since 0.1.0
+	 * @return void
+	 */
+	public function register_widget() {
+		register_widget( 'WPNotificationList_Widget_Display' );
+
 	}
 }
 

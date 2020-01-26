@@ -68,7 +68,7 @@ class WPNotificationList_Register_CPT {
 			'label'               => __( 'Notification List', 'wpnotificationlist' ),
 			'description'         => __( 'Display public notification to the public', 'wpnotificationlist' ),
 			'labels'              => $labels,
-			'show_in_rest'		  => true,
+			'show_in_rest'        => true,
 			'supports'            => array( 'title', 'editor' ),
 			'hierarchical'        => false,
 			'public'              => true,
@@ -83,8 +83,8 @@ class WPNotificationList_Register_CPT {
 			'exclude_from_search' => false,
 			'publicly_queryable'  => true,
 			'capability_type'     => 'post',
-			'rewrite'			  => array(
-				'slug'		=> 'notification',
+			'rewrite'             => array(
+				'slug'       => 'notification',
 				'with_front' => false,
 			),
 		);
