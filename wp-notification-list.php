@@ -1,7 +1,7 @@
 <?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 /**
  * Plugin Name: WP Notification List
- * Plugin URI:  https://github.com/TremiDkhar/notification-list
+ * Plugin URI:  https://github.com/TremiDkhar/wp-notification-list
  * Description: Display list of notification or information to the public.
  * Version:     0.1.0
  * Author:      Tremi Dkhar
