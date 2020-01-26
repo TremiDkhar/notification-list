@@ -1,12 +1,5 @@
 <?php // phpcs:ignore WordPress.Files.FileName.InvalidClassFileName
 /**
- * Notification List
- *
- * @package     WPNotificationList
- * @author      Tremi Dkhar
- * @copyright   Copyright (c) Tremi Dkhar, 2020
- * @license     GPL-2.0+
- *
  * Plugin Name: WP Notification List
  * Plugin URI:  https://github.com/TremiDkhar/notification-list
  * Description: Display list of notification or information to the public.
@@ -16,6 +9,11 @@
  * License:     GPL-2.0+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wpnotificationlist
+ *
+ * @package     WPNotificationList
+ * @author      Tremi Dkhar
+ * @copyright   Copyright (c) Tremi Dkhar, 2020
+ * @license     GPL-2.0+
  */
 
 /**
@@ -34,6 +32,13 @@ final class WPNotificationList {
 	public static $instance;
 
 	/**
+	 * CPT Object
+	 *
+	 * @var object WPNotificationList_Register_CPT
+	 */
+	private $cpt;
+
+	/**
 	 * Main WPNotificationList instance
 	 *
 	 * Insure that only one instance of WPNotificationList exists in memory at any one time.
@@ -48,6 +53,9 @@ final class WPNotificationList {
 
 			self::$instance = new self();
 			self::$instance->constants();
+			self::$instance->includes();
+
+			self::$instance->cpt = new WPNotificationList_Register_CPT();
 
 		}
 
@@ -61,7 +69,7 @@ final class WPNotificationList {
 	 * @since 0.1.0
 	 * @return void
 	 */
-	public function constants() {
+	private function constants() {
 
 		// Plugin Version.
 		if ( ! defined( 'WPNOTIFICATIONLIST_VERSION' ) ) {
@@ -82,6 +90,17 @@ final class WPNotificationList {
 		if ( ! defined( 'WPNOTIFICATIONLIST_PLUGIN_FILE' ) ) {
 			define( 'WPNOTIFICATIONLIST_PLUGIN_FILE', __FILE__ );
 		}
+	}
+
+	/**
+	 * Include required files.
+	 *
+	 * @access private
+	 * @since 0.1.0
+	 * @return void
+	 */
+	private function includes() {
+		require_once WPNOTIFICATIONLIST_PATH . 'includes/class-wpnotificationlist-register-cpt.php';
 	}
 }
 
