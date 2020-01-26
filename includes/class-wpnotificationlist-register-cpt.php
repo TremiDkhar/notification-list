@@ -68,8 +68,8 @@ class WPNotificationList_Register_CPT {
 			'label'               => __( 'Notification List', 'wpnotificationlist' ),
 			'description'         => __( 'Display public notification to the public', 'wpnotificationlist' ),
 			'labels'              => $labels,
+			'show_in_rest'		  => true,
 			'supports'            => array( 'title', 'editor' ),
-			'taxonomies'          => array( 'category', 'post_tag' ),
 			'hierarchical'        => false,
 			'public'              => true,
 			'show_ui'             => true,
@@ -82,7 +82,11 @@ class WPNotificationList_Register_CPT {
 			'has_archive'         => true,
 			'exclude_from_search' => false,
 			'publicly_queryable'  => true,
-			'capability_type'     => 'page',
+			'capability_type'     => 'post',
+			'rewrite'			  => array(
+				'slug'		=> 'notification',
+				'with_front' => false,
+			),
 		);
 
 		register_post_type( 'wpnotificationlist', $args );
