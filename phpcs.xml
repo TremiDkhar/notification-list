@@ -9,9 +9,6 @@
 	<!-- What to scan -->
 	<file>.</file>
 
-	<exclude-pattern>/node_modules/</exclude-pattern>
-	<exclude-pattern>/vendor/</exclude-pattern>
-
 	<!-- How to scan -->
 	<arg value="sp"/> <!-- Show sniff and progress -->
 	<arg name="parallel" value="8"/> <!-- Enables parallel processing when available for faster results. -->
@@ -44,10 +41,6 @@
 			<property name="prefixes" type="array">
 				<element value="wpnotificationlist"/>
 			</property>
-
-			<!-- Increase the minimum prefix; Default is 3 -->
-			<!-- <property name="prefixes" value="2" /> -->
-			
 		</properties>
 	</rule>
 	
