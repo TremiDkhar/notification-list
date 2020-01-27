@@ -161,7 +161,6 @@ class WPNotificationList_Widget_Display extends WP_Widget {
 			?>
 			<li>
 				<?php
-				// @todo: Find a way to optimize this code for better performance.
 				switch ( $instance['display_type'] ) { // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					case 'the_title':
 						printf( '<a href="%1$s" title="%2$s">%2$s</a>', get_the_permalink(), get_the_title() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -179,7 +178,6 @@ class WPNotificationList_Widget_Display extends WP_Widget {
 			</li>
 			<?php
 		}
-
 		echo $tag['close']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		if ( true === $instance['show_archive_link'] ) {
