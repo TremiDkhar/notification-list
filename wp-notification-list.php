@@ -3,7 +3,7 @@
  * Plugin Name: WP Notification List
  * Plugin URI:  https://github.com/TremiDkhar/wp-notification-list
  * Description: Display list of notification or information to the public.
- * Version:     0.1.0
+ * Version:     0.2.0
  * Author:      Tremi Dkhar
  * Author URI:  https://github.com/TremiDkhar
  * License:     GPL-2.0+

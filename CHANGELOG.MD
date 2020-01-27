@@ -1,6 +1,6 @@
 # WP Notification List
 
-## [0.2.0] - Unreleased
+## [0.2.0] - January 27, 2020
 - New: Options to display the archive of the notification
 - New: Option whether to display only the title, or the excerpt or the full content
 
