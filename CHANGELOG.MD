@@ -1,7 +1,7 @@
 # WP Notification List
 
 ## [0.3.0] - Unreleased
-
+- Changed: Change the typo for displaying in the admin bar
 [0.3.0]: https://github.com/TremiDkhar/wp-notification-list/compare/0.2.0...0.3.0
 
 ## [0.2.0] - January 27, 2020

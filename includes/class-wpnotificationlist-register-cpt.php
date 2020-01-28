@@ -38,7 +38,7 @@ class WPNotificationList_Register_CPT {
 			'name'                  => _x( 'Notification Lists', 'Post Type General Name', 'wpnotificationlist' ),
 			'singular_name'         => _x( 'Notification List', 'Post Type Singular Name', 'wpnotificationlist' ),
 			'menu_name'             => __( 'Notification List', 'wpnotificationlist' ),
-			'name_admin_bar'        => __( 'Notification List', 'wpnotificationlist' ),
+			'name_admin_bar'        => __( 'Notification', 'wpnotificationlist' ),
 			'archives'              => __( 'Notification List Archives', 'wpnotificationlist' ),
 			'attributes'            => __( 'Notification Attributes', 'wpnotificationlist' ),
 			'parent_item_colon'     => __( 'Parent Item:', 'wpnotificationlist' ),
