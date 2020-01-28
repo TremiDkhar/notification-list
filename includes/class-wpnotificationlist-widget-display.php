@@ -124,9 +124,9 @@ class WPNotificationList_Widget_Display extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		// Exit if the display type is empty.
+		// Set the default display type if is is forcebly removed
 		if ( empty( $instance['display_type'] ) ) {
-			return;
+			$instance['display_type'] = 'the_title';
 		}
 
 		$notifications = new WP_Query(
@@ -181,7 +181,7 @@ class WPNotificationList_Widget_Display extends WP_Widget {
 		echo $tag['close']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		if ( true === $instance['show_archive_link'] ) {
-			printf( '<a href="%1$s" class="wp-notification-list" title="%2$s">%2$s</a>', esc_url( get_post_type_archive_link( 'wpnotificationlist' ) ), esc_attr__( 'View All Notification', 'wpnotificationlist' ) );
+			printf( '<p><a href="%1$s" class="wp-notification-list" title="%2$s">%2$s</a></p>', esc_url( get_post_type_archive_link( 'wpnotificationlist' ) ), esc_attr__( 'View All Notification', 'wpnotificationlist' ) );
 		}
 
 		echo $args['after_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
