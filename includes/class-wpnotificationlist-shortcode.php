@@ -18,17 +18,17 @@ class WPNotificationList_Shortcode {
 	 * @var array
 	 */
 	private $default_atts = array();
-	
+
 	/**
 	 * Constructor. Setting the default attributes for the constructor
-	 * 
+	 *
 	 * @since 0.3.0
 	 * @return void
 	 */
 	public function __construct() {
 
 		$this->default_atts = array(
-			'no_of_notification'	=> 10,
+			'no_of_notification' => 10,
 			'show_archive_link'  => true,
 			'order_list'         => true,
 			'display_type'       => 'the_title',
@@ -39,7 +39,7 @@ class WPNotificationList_Shortcode {
 	}
 
 	function shortcode( $atts ) {
-		
+
 		$atts = shortcode_atts( $this->default_atts, $atts );
 
 		$notifications = new WP_Query(
@@ -68,7 +68,7 @@ class WPNotificationList_Shortcode {
 			$notifications->the_post();
 			?>
 			<li>
-		 		<?php
+				<?php
 				switch ( $atts['display_type'] ) { // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					case 'the_title':
 						printf( '<a href="%1$s" title="%2$s">%2$s</a>', get_the_permalink(), get_the_title() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

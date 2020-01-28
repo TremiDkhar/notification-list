@@ -55,7 +55,7 @@ final class WPNotificationList {
 			self::$instance->constants();
 			self::$instance->includes();
 
-			self::$instance->cpt = new WPNotificationList_Register_CPT();
+			self::$instance->cpt       = new WPNotificationList_Register_CPT();
 			self::$instance->shortcode = new WPNotificationList_Shortcode();
 
 			add_action( 'widgets_init', array( self::$instance, 'register_widget' ) );
