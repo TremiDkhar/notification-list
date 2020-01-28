@@ -1,6 +1,6 @@
 # WP Notification List
 
-## [0.3.0] - Unreleased
+## [0.3.0] - January 28, 2020
 - Changed: Change the typo for displaying in the admin bar
 - New: Add `wpnotificationlist` shortcode
 
